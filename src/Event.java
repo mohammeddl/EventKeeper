@@ -17,7 +17,11 @@ public class Event {
     this.name = name;
     }
 
-    public String date(){
+    public String hetDate(){
         return date;
+    }
+
+    public int getId(){
+        return id;
     }
 }
