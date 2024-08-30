@@ -9,12 +9,11 @@ public class EventService {
     public static void addEvent() {
         System.out.println("Enter Event ID: ");
         int id = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine(); 
         System.out.println("Enter Event Name: ");
         String name = scanner.nextLine();
         System.out.println("Enter Event Date (YYYY-MM-DD): ");
         String date = scanner.nextLine();
-
         Event event = new Event(id, name, date);
         events.add(event);
         System.out.println("Event added successfully.");
@@ -23,7 +22,7 @@ public class EventService {
     public static void modifyEvent() {
         System.out.println("Enter Event ID to modify: ");
         int eventId = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine(); 
         for (Event event : events) {
             if (event.getId() == eventId) {
                 System.out.println("Enter new name: ");

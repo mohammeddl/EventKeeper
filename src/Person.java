@@ -1,8 +1,8 @@
 public class Person {
 
     private int id;
-    private String userName;
-    private String password;
+    protected String userName;
+    protected String password;
 
     public Person(int id, String userName, String password){
         this.id = id;
