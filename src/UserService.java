@@ -29,7 +29,16 @@ public class UserService {
         }
     }
 
-    
+     public void displayAllEvents() {
+        if (events.isEmpty()) {
+            System.out.println("No events available.");
+        } else {
+            System.out.println("Available Events:");
+            for (Event event : events) {
+                System.out.println("ID: " + event.getId() + ", Name: " + event.getName() + ", Date: " + event.getDate());
+            }
+        }
+    }
 
     private Event findEventById(int eventId) {
         for (Event event : events) {
