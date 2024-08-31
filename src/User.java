@@ -8,4 +8,7 @@ public class User extends Person {
         System.out.println("Viewing registrations for" + getUserName());
     }
 
+    public void registerForEvent(Event event) {
+        System.out.println(getUserName() + " has registered for " + event.getName());
+    }
 }

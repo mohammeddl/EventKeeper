@@ -12,9 +12,14 @@ public class EventService {
         scanner.nextLine(); 
         System.out.println("Enter Event Name: ");
         String name = scanner.nextLine();
+
+        System.out.println("Enter Event local: ");
+        String local = scanner.nextLine();
+
         System.out.println("Enter Event Date (YYYY-MM-DD): ");
         String date = scanner.nextLine();
-        Event event = new Event(id, name, date);
+
+        Event event = new Event(id, name, date, local);
         events.add(event);
         System.out.println("Event added successfully.");
     }

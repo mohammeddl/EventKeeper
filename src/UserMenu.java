@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class UserMenu {
     private static Scanner scanner = new Scanner(System.in);
 
-    public static void display(User user) {
+    public static void display(User user, UserService userService) {
         boolean exit = false;
 
         while (!exit) {
@@ -11,13 +11,16 @@ public class UserMenu {
             int choice = scanner.nextInt();
             switch (choice) {
                 case 1:
-                    System.out.println("User registered for event");
+                    System.out.print("Enter Event ID to register: ");
+                    int eventId = scanner.nextInt();
+                    userService.registerForEvent(user, eventId);
                     break;
                 case 2:
-                    user.viewRegistrations();
-                    break;
+                userService.viewEventRegistrations(user);
+                break;
+                    
                 case 3:
-                    EventService.displayAllEvents();
+                userService.displayAllEvents();
                     break;
                 case 4:
                     exit = true;
