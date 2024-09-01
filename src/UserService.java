@@ -1,13 +1,17 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class UserService {
     
     private static List<Event> registerations = new ArrayList<>();
-    private static List<Event> events = new ArrayList<>();
+    private List<Event> events;
 
 
+    public UserService(List<Event> events) {
+
+        this.events = events;
+
+    }
 
     public void registerForEvent(User user , int eventId){
         Event event = findEventById(eventId);

@@ -1,8 +1,12 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     private static Scanner scanner = new Scanner(System.in);
     private static Person currentUser;
+    private static List<Event> events = new ArrayList<>();
+    private static UserService userService = new UserService(events);
     private static Admin admin = new Admin(2, "admin", "123456789");
 
     public static void main(String[] args) {
@@ -21,7 +25,7 @@ public class Main {
                 if (currentUser instanceof Admin) {
                     AdminMenu.display((Admin) currentUser);
                 } else if (currentUser instanceof User) {
-                    UserMenu.display((User) currentUser);
+                    UserMenu.display((User) currentUser, userService);
                 } else {
                     System.out.println("No account logged in. Please change account first.");
                 }
