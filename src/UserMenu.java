@@ -1,7 +1,11 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserMenu {
     private static Scanner scanner = new Scanner(System.in);
+
+
 
     public static void display(User user, UserService userService) {
         boolean exit = false;
@@ -20,8 +24,9 @@ public class UserMenu {
                 break;
                     
                 case 3:
-                userService.displayAllEvents();
+                EventService.displayAllEvents();
                     break;
+                    
                 case 4:
                     exit = true;
                     break;
@@ -39,4 +44,6 @@ public class UserMenu {
         System.out.println("4. Back to Main Menu");
         System.out.print("Enter your choice: ");
     }
+
+   
 }

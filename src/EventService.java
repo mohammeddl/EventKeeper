@@ -36,6 +36,9 @@ public class EventService {
                 System.out.println("Enter new date: ");
                 String newDate = scanner.nextLine();
                 event.setDate(newDate);
+                System.out.println("Enter new local: ");
+                String newLocal = scanner.nextLine();
+                event.setLocal(newLocal);
                 System.out.println("Event modified successfully.");
                 return;
             }
