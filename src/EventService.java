@@ -69,5 +69,18 @@ public class EventService {
         }
     }
 
+    public static void searchEvent(){
+        System.out.println("Enter Event ID to search: ");
+        int eventId = scanner.nextInt();
+        for (Event event : events) {
+            if (event.getId() == eventId) {
+                System.out.println("ID: " + event.getId() + ", Name: " + event.getName() + ", Date: " + event.getDate());
+                return;
+            }
+        }
+        System.out.println("Event not found.");
+    
+    }
+
 
 }

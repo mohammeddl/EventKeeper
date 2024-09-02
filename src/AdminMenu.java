@@ -23,6 +23,9 @@ public class AdminMenu {
                     EventService.displayAllEvents();
                     break;
                 case 5:
+                    EventService.searchEvent();
+                    break;
+                case 6:
                     exit = true;
                     break;
                 default:
@@ -37,7 +40,8 @@ public class AdminMenu {
         System.out.println("2. Modify Event");
         System.out.println("3. Delete Event");
         System.out.println("4. Display All Events");
-        System.out.println("5. Back to Main Menu");
+        System.out.println("5. Search for Events");
+        System.out.println("6. Back to Main Menu");
         System.out.print("Enter your choice: ");
     }
 }
