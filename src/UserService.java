@@ -6,11 +6,9 @@ public class UserService {
     private static List<Event> registerations = new ArrayList<>();
     private List<Event> events;
 
-
-    public UserService(List<Event> events) {
-
-        this.events = events;
-
+    public UserService() {
+        
+        this.events = EventService.getEvents();
     }
 
     public void registerForEvent(User user , int eventId){
@@ -33,23 +31,18 @@ public class UserService {
         }
     }
 
-     public void displayAllEvents() {
-        if (events.isEmpty()) {
-            System.out.println("No events available.");
-        } else {
-            System.out.println("Available Events:");
-            for (Event event : events) {
-                System.out.println("ID: " + event.getId() + ", Name: " + event.getName() + ", Date: " + event.getDate());
-            }
-        }
-    }
+     
 
     private Event findEventById(int eventId) {
+        
+        System.out.println("Searching for Event ID: " + eventId + " in the events list:");
         for (Event event : events) {
+            System.out.println("Checking Event ID: " + event.getId());
             if (event.getId() == eventId) {
                 return event;
             }
         }
         return null; 
     }
+    
 }

@@ -6,6 +6,11 @@ public class EventService {
     private static List<Event> events = new ArrayList<>();
     private static Scanner scanner = new Scanner(System.in);
 
+    
+    public static List<Event> getEvents() {
+        return events;
+    }
+
     public static void addEvent() {
         System.out.println("Enter Event ID: ");
         int id = scanner.nextInt();
@@ -22,6 +27,7 @@ public class EventService {
         Event event = new Event(id, name, date, local);
         events.add(event);
         System.out.println("Event added successfully.");
+
     }
 
     public static void modifyEvent() {
@@ -62,4 +68,6 @@ public class EventService {
             }
         }
     }
+
+
 }

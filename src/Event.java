@@ -31,6 +31,7 @@ public class Event {
         return id;
     }
 
+    
     public void setLocal(String local){
         this.local = local;
     }

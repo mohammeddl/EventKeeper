@@ -1,13 +1,13 @@
-import java.util.Scanner;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
+
 
 public class UserMenu {
     private static Scanner scanner = new Scanner(System.in);
 
 
 
-    public static void display(User user, UserService userService) {
+    public static void display(User user, UserService userService, List<Event> events) {
         boolean exit = false;
 
         while (!exit) {
