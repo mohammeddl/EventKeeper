@@ -72,6 +72,9 @@ public class AdminMenu {
                     GareUsers.displayAllUsers();
                     break;
                 case 4:
+                    GareUsers.addNewUser();
+                    break;
+                case 5:
                 exit = true;
                     break;
                 default:
@@ -87,7 +90,8 @@ public class AdminMenu {
         System.out.println("1. Search User");
         System.out.println("2. Delete User");
         System.out.println("3. Display All Users");
-        System.out.println("4. Back to Main Menu");
+        System.out.println("4. Add User");
+        System.out.println("5. Back to Main Menu");
         System.out.print("Enter your choice: ");
     }
 
