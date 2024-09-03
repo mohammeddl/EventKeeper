@@ -1,12 +1,18 @@
 
 import java.util.Scanner;
+import java.util.List; 
+import java.util.ArrayList; 
 
 public class Main {
     private static Scanner scanner = new Scanner(System.in);
     private static Person currentUser;
     
+
+    
+    
     private static UserService userService = new UserService();
     private static Admin admin = new Admin(2, "admin", "123456789");
+    private static int userIdCounter = 1;
 
     public static void main(String[] args) {
         boolean exit = false;
@@ -24,7 +30,7 @@ public class Main {
                 if (currentUser instanceof Admin) {
                     AdminMenu.display((Admin) currentUser);
                 } else if (currentUser instanceof User) {
-                    UserMenu.display((User) currentUser, userService, EventService.getEvents());
+                    UserMenu.display((User) currentUser, userService, EventService.getEvents() );
                 } else {
                     System.out.println("No account logged in. Please change account first.");
                 }
@@ -67,7 +73,10 @@ public class Main {
                 System.out.println("Invalid username or password");
             }
         } else if (choice == 2) {
-            currentUser = new User(2, userName, password);
+            User newUser = new User(userIdCounter++, userName, password);
+            GareUsers.addUser((User) newUser);
+            currentUser = newUser;
+            
             System.out.println("Switched to User account.");
         } else {
             System.out.println("Invalid choice. Please try again.");

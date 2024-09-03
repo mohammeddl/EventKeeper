@@ -1,6 +1,6 @@
 public class Person {
 
-    private int id;
+    protected int id;
     protected String userName;
     protected String password;
 
