@@ -1,12 +1,11 @@
 import java.util.Scanner;
-import java.util.List;
+
 
 public class AdminMenu {
     private static Scanner scanner = new Scanner(System.in);
-    private static List<User> users;
 
     public static void display(Admin admin) {
-        boolean exit = false;
+        boolean  exit = false;
 
         while (!exit) {
             showAdminMenu();
@@ -52,45 +51,45 @@ public class AdminMenu {
     }
 
     private static void showGereUsersMenu() {
-        System.out.println("\n=== Admin Menu ===");
-        System.out.println("2. Modify User");
-        System.out.println("3. Delete User");
-        System.out.println("4. Display All Users");
-        System.out.println("6. Back to Main Menu");
-        System.out.print("Enter your choice: ");
 
-        int choice = scanner.nextInt();
-        scanner.nextLine();
-        switch (choice) {
-            // case 1:
-            //     GareUsers.addUser();
-            //     break;
-            case 2:
-            System.out.println("Enter User ID to modify: ");
-                int userId = scanner.nextInt();
-                User user = GareUsers.findUserById(userId);
-                if (user != null) {
-                    // Call a method to modify the user here
-                    System.out.println("User found: " + user.getUserName());
-                } else {
-                    System.out.println("User not found.");
-                }
-                break;
-            case 3:
-            //     GareUsers.deleteUser();
-            //     break;
-            case 4:
-                GareUsers.displayAllUsers();
-                break;
-            // case 5:
-            //     GareUsers.searchUser();
-            //     break;
-            case 6:
-                break;
-            default:
-                System.out.println("Invalid choice. Please try again.");
-        }
+        boolean exit = false;
 
+        while(!exit){
+            displayManageMenu();
+            int choice = scanner.nextInt();
+            switch (choice) {
+                case 1:
+                System.out.println("Enter User ID to modify: ");
+                    int userId = scanner.nextInt();
+                    GareUsers.findUserById(userId);
+                    break;
+                case 2:
+                System.out.println("Enter User ID to delete: ");
+                    int userid = scanner.nextInt();
+                    GareUsers.deleteUser(userid);
+                    break;
+                case 3:
+                    GareUsers.displayAllUsers();
+                    break;
+                case 4:
+                exit = true;
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+
+        }    
 
     }
+
+    private static void displayManageMenu(){
+        System.out.println("\n=== Admin Menu ===");
+        System.out.println("1. Search User");
+        System.out.println("2. Delete User");
+        System.out.println("3. Display All Users");
+        System.out.println("4. Back to Main Menu");
+        System.out.print("Enter your choice: ");
+    }
+
+
 }

@@ -1,7 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 public class EventService {
     private static List<Event> events = new ArrayList<>();
     private static Scanner scanner = new Scanner(System.in);
@@ -15,18 +17,36 @@ public class EventService {
         System.out.println("Enter Event ID: ");
         int id = scanner.nextInt();
         scanner.nextLine(); 
+        if(id < 0 ){
+            System.out.println("Invalid ID");
+            return;
+        }
+
         System.out.println("Enter Event Name: ");
         String name = scanner.nextLine();
+      if(name.length() < 3){
+    System.out.println("Invalid Name");
+    return;}
 
         System.out.println("Enter Event local: ");
         String local = scanner.nextLine();
 
-        System.out.println("Enter Event Date (YYYY-MM-DD): ");
-        String date = scanner.nextLine();
+        if(local.length() < 3){
+            System.out.println("Invalid local");
+            return;
+        }
 
-        Event event = new Event(id, name, date, local);
-        events.add(event);
-        System.out.println("Event added successfully.");
+        System.out.println("Enter Event Date (YYYY-MM-DD): ");
+        String dateInput = scanner.nextLine().trim();
+        if(getValidDate(dateInput) == null){
+            return;
+        }else{
+            String date = getValidDate(dateInput);
+            events.add(new Event(id, name, date, local));
+            System.out.println("Event added successfully.");
+        }
+
+        
 
     }
 
@@ -82,5 +102,18 @@ public class EventService {
     
     }
 
+
+    private static String getValidDate(String dateInput) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+            
+            try {
+                LocalDate.parse(dateInput, formatter);
+                return dateInput; 
+            } catch (DateTimeParseException e) {
+                System.out.println("Invalid date format. Please enter a date in YYYY-MM-DD format.");
+            }
+            return null;
+    }
 
 }

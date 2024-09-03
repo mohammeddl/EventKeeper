@@ -24,12 +24,17 @@ public class GareUsers {
     }
 
 
-    public static User findUserById(int userId) {
+    public static void findUserById(int userId) {
         for (User user : users) {
             if (user.getId() == userId) {
-                return user;
+                System.out.println("User found: " + user.getUserName());
             }
         }
-        return null;
+        
+    }
+
+    public static void deleteUser(int userId){
+        users.remove(userId);
+        System.out.println("User deleted successfully.");
     }
 }
