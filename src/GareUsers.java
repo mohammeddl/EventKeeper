@@ -53,4 +53,10 @@ System.out.println("Enter User ID: ");
         users.add(user);
         System.out.println("User added successfully: " + user.getUserName());
     }
+
+
+    public static List<User> getUsers(){
+        return users;
+    }
 }
+

@@ -11,6 +11,10 @@ public class UserService {
         this.events = EventService.getEvents();
     }
 
+    public static List<Event> getRegisterations(){
+        return registerations;
+    }
+
     public void registerForEvent(User user , int eventId){
         Event event = findEventById(eventId);
        if( event != null){

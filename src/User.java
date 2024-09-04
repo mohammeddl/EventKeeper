@@ -4,11 +4,6 @@ public class User extends Person {
         super(id, userName, password);
     }
     
-    public void viewRegistrations(){
-        System.out.println("Viewing registrations for" + getUserName());
-    }
+  
 
-    public void registerForEvent(Event event) {
-        System.out.println(getUserName() + " has registered for " + event.getName());
-    }
 }

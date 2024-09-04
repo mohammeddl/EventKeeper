@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class AdminMenu {
     private static Scanner scanner = new Scanner(System.in);
 
+
     public static void display(Admin admin) {
         boolean  exit = false;
 
@@ -30,6 +31,9 @@ public class AdminMenu {
                 showGereUsersMenu();
                     break;
                 case 7:
+                admin.generateEventReport();
+                    break;
+                case 8:
                     exit = true;
                     break;
                 default:
@@ -46,7 +50,8 @@ public class AdminMenu {
         System.out.println("4. Display All Events");
         System.out.println("5. Search for Events");
         System.out.println("6. Manage Users");
-        System.out.println("7. Back to Main Menu");
+        System.out.println("7. Report");
+        System.out.println("8. Back to Main Menu");
         System.out.print("Enter your choice: ");
     }
 
