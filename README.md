@@ -1,18 +1,36 @@
-## Getting Started
+# Event Management System
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+This project is an Event Management System that allows administrators to manage events and users, and allows users to view and register for events.
 
-## Folder Structure
+## Table of Contents
 
-The workspace contains two folders by default, where:
+- [Project Description](#project-description)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Technologies Used](#technologies-used)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Project Description
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+The Event Management System is a Java-based application that enables:
+- Administrators to add, modify, delete, and search for events.
+- Administrators to manage user accounts (add, modify, delete, display).
+- Users to view available events and register for them.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+The system is designed with a simple console interface, using object-oriented principles and basic data management.
 
-## Dependency Management
+## Features
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+### Admin Features
+- Add, modify, delete, and display events.
+- Search for specific events.
+- Manage user accounts, including adding, modifying, deleting, and displaying all users.
+
+### User Features
+- View available events.
+- Register for events.
+
+
