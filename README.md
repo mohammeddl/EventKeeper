@@ -28,9 +28,11 @@ The system is designed with a simple console interface, using object-oriented pr
 - Add, modify, delete, and display events.
 - Search for specific events.
 - Manage user accounts, including adding, modifying, deleting, and displaying all users.
+- Generate Report
 
 ### User Features
-- View available events.
+- View events.
 - Register for events.
+- View Event Registrations
 
 
